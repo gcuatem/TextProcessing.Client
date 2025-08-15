@@ -11,7 +11,7 @@ const ProcessingForm = () => {
     setProcessing(true);
     controllerRef.current = new AbortController();
 
-    const response = await fetch("http://localhost:5234/api/Processing", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}`, {
       method: "POST",
       body: JSON.stringify({ input }),
       headers: { "Content-Type": "application/json" },
